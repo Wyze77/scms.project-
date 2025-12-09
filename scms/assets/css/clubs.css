@@ -1,0 +1,30 @@
+.club-banner-1 {
+  background: linear-gradient(to right, #52796f, #84a98c);
+}
+.club-banner-2 {
+  background: linear-gradient(to right, #84a98c, #cad2c5);
+}
+.club-banner-3 {
+  background: linear-gradient(to right, #52796f, #354f52);
+}
+.club-banner-4 {
+  background: linear-gradient(to right, #84a98c, #52796f);
+}
+.club-banner-5 {
+  background: linear-gradient(to right, #cad2c5, #84a98c);
+}
+.club-banner-6 {
+  background: linear-gradient(to right, #52796f, #84a98c);
+}
+.club-banner-7 {
+  background: linear-gradient(to right, #354f52, #52796f);
+}
+.club-banner-8 {
+  background: linear-gradient(to right, #84a98c, #cad2c5);
+}
+#clubs-container .card {
+  animation: fadeIn 0.3s ease-in;
+}
+.overflow-hidden {
+  overflow: hidden;
+}

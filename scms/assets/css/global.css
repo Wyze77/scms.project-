@@ -1,0 +1,48 @@
+:root {
+    --nav-primary: #000000;
+    --secondary: #ffffff;
+    --background: #f1f1f1;
+    --light-content: #808080;
+    --text-primary: #000000;
+    --text-secondary: #525252;
+    --footer-bg: #000000;
+    --footer-text: #ffffff;
+}
+
+body.dark-mode {
+    --nav-primary: #1a1a1a;
+    --secondary: #2d2d2d;
+    --background: #121212;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --footer-bg: #000000;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.poppins { font-family: 'Poppins', sans-serif; font-weight: 600; }
+
+/* Custom Color Utilities */
+.bg-nav-primary { background-color: var(--nav-primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-background { background-color: var(--background); }
+.text-nav-primary { color: var(--nav-primary); }
+.text-secondary { color: var(--secondary); }
+.text-text-primary { color: var(--text-primary); }
+.text-text-secondary { color: var(--text-secondary); }
+.text-footer-text { color: var(--footer-text); }
+
+main { flex: 1; }
+
+/* Home/Hero Specifics */
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-3 > * + * { margin-top: 0.75rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.space-y-2 > * + * { margin-top: 0.5rem; }
