@@ -24,6 +24,7 @@
 }
 #clubs-container .card {
   animation: fadeIn 0.3s ease-in;
+  
 }
 .overflow-hidden {
   overflow: hidden;

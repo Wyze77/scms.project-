@@ -5,28 +5,40 @@ export function renderNavbar(activePage) {
     <nav class="bg-nav-primary">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-white font-semibold poppins text-3xl">SCMS</span>
+                <div class="flex items-center cursor-pointer">
+                    <a href="index.html" class="flex items-center">
+                        <span class="text-white font-semibold poppins text-3xl">SCMS</span>
+                    </a>   
                 </div>
                 <div class="flex items-center space-x-2 md:space-x-4">
                     <div class="flex items-center space-x-1 md:space-x-2">
-                        <a href="index.html" class="nav-btn ${activePage === 'Home' ? 'active' : ''}">
+                        <a href="index.html" class="nav-btn ${
+                          activePage === "Home" ? "active" : ""
+                        }">
                             <img src="assets/img/Home.svg" class="w-5 h-5" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/>
                             <span class="hidden sm:inline">Home</span>
                         </a>
-                        <a href="dashboard.html" class="nav-btn ${activePage === 'Dashboard' ? 'active' : ''}">
+                        <a href="dashboard.html" class="nav-btn ${
+                          activePage === "Dashboard" ? "active" : ""
+                        }">
                             <img src="assets/img/DashBoard.svg" class="w-5 h-5"/>
                             <span class="hidden sm:inline">Dashboard</span>
                         </a>
-                        <a href="announcements.html" class="nav-btn ${activePage === 'Announcement' ? 'active' : ''}">
+                        <a href="announcements.html" class="nav-btn ${
+                          activePage === "Announcement" ? "active" : ""
+                        }">
                             <img src="assets/img/Megaphone.svg" class="w-5 h-5"/>
                             <span class="hidden sm:inline">Announcements</span>
                         </a>
-                        <a href="events.html" class="nav-btn ${activePage === 'Events' ? 'active' : ''}">
+                        <a href="events.html" class="nav-btn ${
+                          activePage === "Events" ? "active" : ""
+                        }">
                             <img src="assets/img/CalendarWhite.svg" class="w-5 h-5"/>
                             <span class="hidden sm:inline">Events</span>
                         </a>
-                        <a href="clubs.html" class="nav-btn ${activePage === 'Clubs' ? 'active' : ''}">
+                        <a href="clubs.html" class="nav-btn ${
+                          activePage === "Clubs" ? "active" : ""
+                        }">
                             <img src="assets/img/PersonWhite.svg" class="w-5 h-5"/>
                             <span class="hidden sm:inline">Clubs</span>
                         </a>
