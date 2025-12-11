@@ -155,7 +155,7 @@ export const clubs = [
     {
         id: 4,
         name: "Basketball Team",
-        category: "Sport",
+        category: "Sport",  
         description: "Play competitive basketball and represent the college in tournaments.",
         fullDescription: "The Basketball Team welcomes players of all skill levels. We practice three times a week and compete in inter-college tournaments.",
         members: 45,
