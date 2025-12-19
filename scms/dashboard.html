@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - SCMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+  </head>
+  <body data-page-name="Dashboard">
+    <div id="navbar-placeholder"></div>
+    <main>
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+          <h1 class="text-text-primary poppins text-2xl">Welcome, Student</h1>
+          <p class="text-text-secondary text-sm mt-1" id="last-visited">
+            Last visited: Home Page
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-6 mb-8">
+          <div class="card p-6">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="./assets/img/BookMarkBlack.svg" alt="BookMark" class="w-5 h-5 text-nav-primary">
+              <h3 class="text-text-primary poppins">Saved Announcements</h3>
+            </div>
+            <div class="space-y-3" id="saved-announcements-list"></div>
+          </div>
+          <div class="card p-6">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="./assets/img/CalendarBlack.svg" alt="Calender" class="w-5 h-5 text-text-secondary">
+              <h3 class="text-text-primary poppins">Registered Events</h3>
+            </div>
+            <div class="space-y-3" id="registered-events-list"></div>
+          </div>
+          <div class="card p-6">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="./assets/img/PersonBlack.svg" alt="Person" class="w-5 h-5 text-nav-primary">
+              <h3 class="text-text-primary poppins">Joined Clubs</h3>
+            </div>
+            <div class="space-y-3" id="joined-clubs-list"></div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="card p-6">
+            <h4 class="text-text-primary mb-4 poppins">Quick Actions</h4>
+            <div class="space-y-2">
+              <a
+                href="announcements.html"
+                class="block w-full text-left p-3 bg-background rounded-lg hover:bg-opacity-80 transition-colors text-text-primary"
+              >
+                <div class="flex items-center gap-2">
+                  <img src="./assets/img/MegaphoneBlack.svg" alt="MegaPhone" class="w-5 h-5">
+                  <span>View All Announcements</span>
+                </div>
+              </a>
+              <a
+                href="clubs.html"
+                class="block w-full text-left p-3 bg-background rounded-lg hover:bg-opacity-80 transition-colors text-text-primary"
+              >
+                <div class="flex items-center gap-2">
+                  <img src="./assets/img/PersonBlack.svg" alt="Person" class="w-5 h-5">
+                  <span>Explore More Clubs</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="card p-6">
+            <h4 class="text-text-primary mb-4 poppins">User Settings</h4>
+            <div class="space-y-2">
+              <button
+                class="w-full text-left p-3 bg-background rounded-lg hover:bg-opacity-80 transition-colors text-text-primary"
+              >
+                Edit Profile
+              </button>
+              <button
+                class="w-full text-left p-3 bg-background rounded-lg hover:bg-opacity-80 transition-colors text-text-primary"
+              >
+                Notification Preferences
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script type="module" src="assets/js/app.js"></script>
+    <script type="module" src="assets/js/pages/dashboard.js"></script>
+  </body>
+</html>

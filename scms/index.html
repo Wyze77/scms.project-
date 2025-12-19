@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - SCMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+  </head>
+  <body data-page-name="Home">
+    <div id="navbar-placeholder"></div>
+    <main>
+      <div class="space-y-12 py-8">
+        <section class="w-full px-7">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-6">
+              <h1 class="text-text-primary poppins text-2xl">
+                Student Campus Management System (SCMS)
+              </h1>
+              <p class="text-text-secondary text-sm">
+                Your one-stop platform for staying connected with campus life.
+                Access announcements, register for events, join clubs, and
+                manage your student activities all in one place.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="dashboard.html" class="btn btn-primary"
+                  >View Dashboard</a
+                >
+                <a href="announcements.html" class="btn btn-secondary"
+                  >Browse Announcements</a
+                >
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="card bg-secondary p-4">
+                <h4 class="text-text-primary mb-1 poppins">
+                  Latest Announcement
+                </h4>
+                <p class="text-text-secondary/90 text-sm">
+                  Campus closed on Dec 25th for holidays
+                </p>
+              </div>
+
+              <div class="card bg-secondary text-text-primary p-4">
+                <h4 class="text-text-primary mb-1 poppins">Upcoming Event</h4>
+                <p class="text-text-secondary/90 text-sm">
+                  Tech Workshop - Dec 15th, 2:00 PM
+                </p>
+              </div>
+              <div class="card bg-secondary text-text-primary p-4">
+                <h4 class="text-text-primary mb-1 poppins">Popular Club</h4>
+                <p class="text-text-secondary/90 text-sm">
+                  Coding Club - 150+ members
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="w-full px-8">
+          <h2 class="text-text-primary mb-6 text-center poppins">
+            Quick Access
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="card p-6 space-y-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-background flex items-center justify-center text-nav-primary"
+              >
+                <img src="assets/img/Bell.svg" class="w-6 h-6" />
+              </div>
+              <h3 class="text-text-primary poppins">Announcements</h3>
+              <p class="text-text-secondary text-sm">
+                Stay updated with the latest campus news and important notices
+              </p>
+              <a href="announcements.html" class="btn btn-primary btn-sm w-full"
+                ><span>Open</span
+                ><img src="assets/img/ArrowRight.svg" class="w-6 h-6 ml-2"
+              /></a>
+            </div>
+            <div class="card p-6 space-y-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-background flex items-center justify-center text-secondary"
+              >
+                <img src="assets/img/CalendarBlack.svg" class="w-6 h-6" />
+              </div>
+              <h3 class="text-text-primary poppins">Events</h3>
+              <p class="text-text-secondary text-sm">
+                Discover and register for upcoming campus events and workshops
+              </p>
+              <a href="events.html" class="btn btn-primary btn-sm w-full"
+                ><span>Open</span
+                ><img src="assets/img/ArrowRight.svg" class="w-6 h-6 ml-2"
+              /></a>
+            </div>
+            <div class="card p-6 space-y-4">
+              <div
+                class="w-12 h-12 rounded-lg bg-background flex items-center justify-center text-nav-primary"
+              >
+                <img src="assets/img/PersonBlack.svg" class="w-6 h-6" />
+              </div>
+              <h3 class="text-text-primary poppins">Clubs</h3>
+              <p class="text-text-secondary text-sm">
+                Join student clubs and connect with peers who share your
+                interests
+              </p>
+              <a href="clubs.html" class="btn btn-primary btn-sm w-full"
+                ><span>Open</span
+                ><img src="assets/img/ArrowRight.svg" class="w-6 h-6 ml-2"
+              /></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer></footer>
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>

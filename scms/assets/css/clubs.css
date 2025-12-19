@@ -1,0 +1,31 @@
+.club-banner-1{
+  background:#cac7c7;
+}
+.club-banner-2 {
+  background:#cac7c7;
+}
+.club-banner-3 {
+  background:#cac7c7;
+}
+.club-banner-4 {
+  background:#cac7c7;
+}
+.club-banner-5 {
+  background:#cac7c7;
+}
+.club-banner-6 {
+  background:#cac7c7;
+}
+.club-banner-7 {
+  background:#cac7c7;
+}
+.club-banner-8 {
+  background:#cac7c7;
+}
+#clubs-container .card {
+  animation: fadeIn 0.3s ease-in;
+  
+}
+.overflow-hidden {
+  overflow: hidden;
+}
