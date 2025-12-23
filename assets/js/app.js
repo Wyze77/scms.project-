@@ -43,7 +43,7 @@ function applyTheme(isDark) {
         body.classList.add('dark-mode');
         if(icon) {
             // Fix: Switch the image source instead of using Lucide
-            icon.src = './assets/img/Sun.svg';
+            icon.src = './assets/img/SunWhite.svg';
             icon.alt = 'Light Mode';
         }
     } else {
