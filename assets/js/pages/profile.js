@@ -69,6 +69,10 @@ function loadProfile() {
     if($('#display-name')) $('#display-name').textContent = profile.name;
     if($('#display-id')) $('#display-id').textContent = `ID: ${profile.id}`;
 
+    if ($("#display-joined") && registeredUser && registeredUser.joinedDate) {
+      $("#display-joined").textContent = registeredUser.joinedDate;
+    }
+
     // 8. Update Avatar
     if (profile.avatar) {
         $('#avatar-img').src = profile.avatar;

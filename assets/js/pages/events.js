@@ -23,9 +23,20 @@ function render() {
 
   container.innerHTML = filtered
     .map((e) => {
-      const capacityPercent = (e.registered / e.capacity) * 100;
-      const isFull = e.registered >= e.capacity;
+      // --- NEW LOGIC: Calculate Dynamic Counts ---
       const isRegistered = registeredIds.includes(e.id);
+
+      // If user is registered, add 1 to the base count from the database
+      const currentRegistered = isRegistered ? e.registered + 1 : e.registered;
+
+      // Calculate percentage (clamped to 100% max)
+      const capacityPercent = Math.min(
+        (currentRegistered / e.capacity) * 100,
+        100
+      );
+
+      const isFull = currentRegistered >= e.capacity;
+      // -------------------------------------------
 
       // Determine Button State
       let actionBtn;
@@ -65,11 +76,13 @@ function render() {
                               <img src="./assets/img/PersonBlack.svg" alt="Person" class="w-4 h-4"></img>
                               Capacity
                             </div>
-                            <span class="text-text-secondary">${
-                              e.registered
-                            } / ${e.capacity}</span>
+                            <span class="text-text-secondary">
+                                ${currentRegistered} / ${e.capacity}
+                            </span>
                         </div>
-                        <div class="capacity-bar"><div class="capacity-fill" style="width: ${capacityPercent}%"></div></div>
+                        <div class="capacity-bar">
+                            <div class="capacity-fill" style="width: ${capacityPercent}%"></div>
+                        </div>
                     </div>
                     <div class="flex gap-2 pt-2">
                         ${actionBtn}
@@ -92,23 +105,32 @@ window.handleRegister = (id) => {
   const event = events.find((e) => e.id === id);
   const registeredIds = Storage.get(Storage.KEYS.REGISTERED_EVENTS, []);
 
-  if (registeredIds.includes(id)) {
+  const isAlreadyRegistered = registeredIds.includes(id);
+  // Calculate potential new count to check for fullness
+  const currentCount = isAlreadyRegistered
+    ? event.registered + 1
+    : event.registered;
+
+  if (isAlreadyRegistered) {
     // Unregister
     Storage.removeItem(Storage.KEYS.REGISTERED_EVENTS, id);
     Toast.show(`Unregistered from: ${event.title}`);
   } else {
     // Register
-    if (event.registered >= event.capacity) return;
+    if (currentCount >= event.capacity) {
+      Toast.show("Event is full!");
+      return;
+    }
     Storage.addItem(Storage.KEYS.REGISTERED_EVENTS, id);
     Toast.show(`Registered for: ${event.title}`);
   }
 
-  // Re-render UI to update buttons
+  // Re-render UI to update buttons and numbers instantly
   render();
 
-  // If inside a modal, close it or refresh it (closing is simpler for now)
+  // If inside a modal, refresh it so the number updates there too
   if (document.getElementById("modal").classList.contains("active")) {
-    window.handleView(id); // Refresh modal content
+    window.handleView(id);
   }
 };
 
@@ -116,7 +138,11 @@ window.handleView = (id) => {
   const e = events.find((ev) => ev.id === id);
   const registeredIds = Storage.get(Storage.KEYS.REGISTERED_EVENTS, []);
   const isRegistered = registeredIds.includes(e.id);
-  const isFull = e.registered >= e.capacity;
+
+  // --- NEW LOGIC FOR MODAL ---
+  const currentRegistered = isRegistered ? e.registered + 1 : e.registered;
+  const isFull = currentRegistered >= e.capacity;
+  // --------------------------
 
   let actionBtn;
   if (isRegistered) {
@@ -139,9 +165,10 @@ window.handleView = (id) => {
                 <div class="flex items-center gap-2"><img src="./assets/img/Location.svg" alt="location" class="w-5 h-5"></img><span>${
                   e.location
                 }</span></div>
-                <div class="flex items-center gap-2"><img src="./assets/img/PersonBlack.svg" alt="Person" class="w-5 h-5"></img><span>${
-                  e.registered
-                } / ${e.capacity} registered</span></div>
+                <div class="flex items-center gap-2">
+                    <img src="./assets/img/PersonBlack.svg" alt="Person" class="w-5 h-5"></img>
+                    <span>${currentRegistered} / ${e.capacity} registered</span>
+                </div>
             </div>
             <p class="text-text-primary leading-relaxed">${
               e.fullDescription

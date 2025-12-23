@@ -8,8 +8,6 @@ let currentCategory = "All";
 function render() {
   const container = $("#clubs-container");
   const searchVal = $("#club-search").value.toLowerCase();
-
-  // 1. NEW: Get the list of joined club IDs from storage
   const joinedIds = Storage.get(Storage.KEYS.JOINED_CLUBS, []);
 
   const filtered = clubs.filter((c) => {
@@ -23,20 +21,20 @@ function render() {
 
   container.innerHTML = filtered
     .map((c) => {
-      // 2. Check if this specific club is joined
       const isJoined = joinedIds.includes(c.id);
 
-      // 3. Dynamic Button Logic (Join vs Leave)
       const actionBtn = isJoined
         ? `<button onclick="window.handleJoin(${c.id})" class="btn bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 btn-sm flex-1">Leave Club</button>`
         : `<button onclick="window.handleJoin(${c.id})" class="btn btn-primary btn-sm flex-1">Join Club</button>`;
 
       return `
-        <div class="card overflow-hidden">
-            <div class="h-32 ${c.bannerClass} flex items-center justify-center">
-                <h3 class="text-white text-center px-4 poppins">${c.name}</h3>
+        <div class="card overflow-hidden flex flex-col h-full">
+            <div class="h-32 ${
+              c.bannerClass
+            } flex items-center justify-center shrink-0">
+                <h3 class="text-black text-center px-4 poppins">${c.name}</h3>
             </div>
-            <div class="p-6 space-y-4">
+            <div class="p-6 flex flex-col flex-1 gap-4">
                 <div class="flex items-center justify-between">
                     <span class="badge badge-${c.category.toLowerCase()} ">${
         c.category
@@ -47,7 +45,7 @@ function render() {
                     </div>
                 </div>
                 <p class="text-text-secondary text-sm">${c.description}</p>
-                <div class="flex gap-2 pt-2">
+                <div class="flex gap-2 pt-2 mt-auto">
                     ${actionBtn}
                     <button onclick="window.handleView(${
                       c.id

@@ -16,8 +16,8 @@ body.dark-mode {
   --secondary: #18181b;
   --background: #09090b;
   --border-color: #27272a;
-  --text-primary: #09090b;
-  --text-secondary: #71717a;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
   --footer-bg: #09090b;
   --footer-text: #71717a;
 }
@@ -78,4 +78,131 @@ main {
 }
 .space-y-2 > * + * {
   margin-top: 0.5rem;
+}
+
+/* --- Add this to the bottom of assets/css/global.css --- */
+
+/* 1. Fix Inputs in Dark Mode */
+body.dark-mode input.bg-white {
+  background-color: var(--secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* 2. Invert Black Icons to White */
+/* This makes icons like PersonBlack.svg visible on dark backgrounds */
+body.dark-mode img[src*="Black.svg"],
+body.dark-mode img[src*="Search.svg"],
+body.dark-mode img[src*="Bell.svg"],
+body.dark-mode img[src*="Location.svg"],
+body.dark-mode img[src*="X.svg"] {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* 3. Handle specific icons that need to be white */
+body.dark-mode img[src*="ArrowRight.svg"],
+body.dark-mode img[src*="EyeWhite.svg"] {
+  filter: brightness(0); /* Ensure they stay white/bright */
+  opacity: 1;
+}
+
+/* 4. Fix Search Icon Opacity */
+body.dark-mode .relative img[src*="Search.svg"] {
+  opacity: 0.7;
+}
+
+/* 5. Update Primary Buttons for Dark Mode */
+body.dark-mode .btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+}
+body.dark-mode .btn-primary:hover {
+  background-color: #e5e5e5;
+}
+
+/* 6. Update Active Filter Buttons */
+body.dark-mode .filter-btn.active {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+body.dark-mode .filter-btn.active:hover {
+  background-color: #e5e5e5;
+}
+
+/* 7. Update Secondary Buttons */
+body.dark-mode .btn-secondary {
+  border-color: #525252;
+  color: #e5e5e5;
+  background-color: transparent;
+}
+body.dark-mode .btn-secondary:hover {
+  background-color: #262626;
+}
+
+/* 8. Fix Event Capacity Bars */
+body.dark-mode .capacity-bar {
+  background-color: #404040;
+}
+body.dark-mode .capacity-fill {
+  background-color: #ffffff;
+}
+
+body.dark-mode nav .absolute.bg-white {
+    background-color: var(--secondary) ;
+    border-color: var(--border-color) ;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode nav .absolute .border-gray-100 {
+    border-color: var(--border-color) ;
+}
+
+body.dark-mode nav .absolute a:hover {
+    background-color: #27272a ;
+}
+
+body.dark-mode nav .absolute button:hover {
+    background-color: rgba(220, 38, 38, 0.1) ;
+}
+
+body.dark-mode .bg-gray-50 {
+    background-color: var(--background) ; 
+    border-color: var(--border-color) ;  
+    color: var(--text-primary) ;      
+}
+
+body.dark-mode .text-red-400 {
+    color: #f87171 ;
+}
+
+body.dark-mode input[readonly] {
+    background-color: #27272a ; 
+    color: #a1a1aa ;   
+    border-color: var(--border-color) ;
+}
+
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: var(--nav-primary) ;
+    color: #a1a1aa;
+    border-color: var(--border-color) ;
+}
+
+body.dark-mode .skill-tag {
+    background-color: #27272a ; 
+    color: #ffffff ;  
+    border: 1px solid #404040;     
+}
+
+body.dark-mode nav .absolute .text-gray-700 {
+    color: #a1a1aa; 
+}
+
+body.dark-mode #password-modal .bg-white {
+    background-color: var(--secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
 }

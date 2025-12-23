@@ -158,15 +158,18 @@ footer {
   background-color: #ecfdf5;
   border: 1px solid #a7f3d0;
   border-radius: 0.5rem;
-  padding: 1rem; /* UPDATED: Adjusted padding since we use flex gap now */
+  padding: 1rem;
   display: none;
   animation: slideIn 0.3s ease-out;
 }
+.toast .text-text-primary {
+  color: black;
+}
 .toast.active {
-  display: flex; /* UPDATED: Changed from block to flex */
-  align-items: center; /* Vertically center items */
-  justify-content: space-between; /* Space out message and close button */
-  gap: 1rem; /* Add spacing between message and button */
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 1rem; 
 }
 @keyframes slideIn {
   from {

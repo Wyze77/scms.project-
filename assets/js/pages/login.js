@@ -32,25 +32,30 @@ window.switchTab = (tab) => {
 };
 
 window.handleRegister = (e) => {
-    e.preventDefault();
-    
-    const name = $('#reg-name').value;
-    const id = $('#reg-id').value;
-    const pass = $('#reg-pass').value;
+  e.preventDefault();
 
-    const users = Storage.get('scms_users', []);
+  const name = $("#reg-name").value;
+  const id = $("#reg-id").value;
+  const pass = $("#reg-pass").value;
 
-    if (users.find(u => u.id === id)) {
-        alert("Error: Student ID already registered!");
-        return;
-    }
+  const users = Storage.get("scms_users", []);
 
-    users.push({ name, id, pass });
-    Storage.set('scms_users', users);
+  if (users.find((u) => u.id === id)) {
+    alert("Error: Student ID already registered!");
+    return;
+  }
+  const joinedDate = new Date().toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
 
-    alert("Registration Successful! Please log in.");
-    window.switchTab('login');
-    $('#login-id').value = id; 
+  users.push({ name, id, pass, joinedDate });
+  users.push({ name, id, pass });
+  Storage.set("scms_users", users);
+
+  alert("Registration Successful! Please log in.");
+  window.switchTab("login");
+  $("#login-id").value = id;
 };
 
 window.handleLogin = (e) => {

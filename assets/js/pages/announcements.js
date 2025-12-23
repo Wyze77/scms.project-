@@ -32,7 +32,7 @@ function render() {
       // Uses 'BookMarkRed.png' for the Unsave state
       const actionBtn = isSaved
         ? `<button onclick="window.handleSave(${item.id})" class="btn bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 btn-sm flex-1 sm:flex-none">
-                <img src="./assets/img/BookMarkRed.png" alt="Unsave" class="w-5 h-5 mr-2"></img>Unsave
+                <img src="./assets/img/BookMarkRed.svg" alt="Unsave" class="w-5 h-5 mr-2"></img>Unsave
                </button>`
         : `<button onclick="window.handleSave(${item.id})" class="btn btn-secondary btn-sm flex-1 sm:flex-none">
                 <img src="./assets/img/BookMarkBlack.svg" alt="Save" class="w-5 h-5 mr-2"></img>Save
