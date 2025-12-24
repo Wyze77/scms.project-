@@ -106,7 +106,7 @@ window.handleView = (id) => {
             <img src="./assets/img/BookMarkRed.svg" alt="" class="w-5 h-5"></img>Unsave Announcement
            </button>`
     : `<button onclick="window.handleSave(${item.id})" class="btn btn-primary w-full">
-            <img src="./assets/img/BookMarkBlack.svg" alt="" class="w-5 h-5 mr-2"></img>
+            <img src="./assets/img/BookMarkWhite.svg" alt="" class="w-5 h-5 mr-2"></img>
             Save Announcement
            </button>`;
 
