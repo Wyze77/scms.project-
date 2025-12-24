@@ -103,10 +103,10 @@ window.handleView = (id) => {
   // --- UPDATED MODAL BUTTON LOGIC ---
   const actionBtn = isSaved
     ? `<button onclick="window.handleSave(${item.id})" class="btn bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 w-full">
-            <img src="./assets/img/BookMarkRed.svg" alt="" class="w-5 h-5"></img>Unsave Announcement
+            Unsave Announcement
            </button>`
     : `<button onclick="window.handleSave(${item.id})" class="btn btn-primary w-full">
-            <img src="./assets/img/BookMarkWhite.svg" alt="" class="w-5 h-5 mr-2"></img>
+            
             Save Announcement
            </button>`;
 
