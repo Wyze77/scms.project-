@@ -39,7 +39,7 @@ export function renderNavbar(activePage) {
                         </a>
                         <a href="announcements.html" class="nav-btn ${activePage === "Announcement" ? "active" : ""}">
                             <img src="assets/img/MegaphoneWhite.svg" class="w-5 h-5"/>
-                            <span class="hidden sm:inline">News</span>
+                            <span class="hidden sm:inline">Announcement</span>
                         </a>
                         <a href="events.html" class="nav-btn ${activePage === "Events" ? "active" : ""}">
                             <img src="assets/img/CalendarWhite.svg" class="w-5 h-5"/>
