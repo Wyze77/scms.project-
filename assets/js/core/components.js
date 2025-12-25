@@ -30,23 +30,23 @@ export function renderNavbar(activePage) {
                 <div class="flex items-center space-x-2 md:space-x-4">
                     <div class="flex items-center space-x-1 md:space-x-2">
                         <a href="index.html" class="nav-btn ${activePage === "Home" ? "active" : ""}">
-                            <img src="assets/img/Home.svg" class="w-7 h-7" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/>
+                            <img src="assets/img/Home.svg" class="w-8 h-8" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/>
                             <span class="hidden sm:inline">Home</span>
                         </a>
                         <a href="dashboard.html" class="nav-btn ${activePage === "Dashboard" ? "active" : ""}">
-                            <img src="assets/img/DashBoard.svg" class="w-7 h-7"/>
+                            <img src="assets/img/DashBoard.svg" class="w-8 h-8"/>
                             <span class="hidden sm:inline">Dashboard</span>
                         </a>
                         <a href="announcements.html" class="nav-btn ${activePage === "Announcement" ? "active" : ""}">
-                            <img src="assets/img/MegaphoneWhite.svg" class="w-7 h-7"/>
+                            <img src="assets/img/MegaphoneWhite.svg" class="w-8 h-8"/>
                             <span class="hidden sm:inline">Announcements</span>
                         </a>
                         <a href="events.html" class="nav-btn ${activePage === "Events" ? "active" : ""}">
-                            <img src="assets/img/CalendarWhite.svg" class="w-7 h-7"/>
+                            <img src="assets/img/CalendarWhite.svg" class="w-8 h-8"/>
                             <span class="hidden sm:inline">Events</span>
                         </a>
                         <a href="clubs.html" class="nav-btn ${activePage === "Clubs" ? "active" : ""}">
-                            <img src="assets/img/PersonWhite.svg" class="w-7 h-7"/>
+                            <img src="assets/img/PersonWhite.svg" class="w-8 h-8"/>
                             <span class="hidden sm:inline">Clubs</span>
                         </a>
                     </div>
@@ -83,7 +83,7 @@ export function renderNavbar(activePage) {
                         }
                         
                         <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-700 transition-colors focus:outline-none">
-                            <img src="./assets/img/MoonWhite.svg" alt="Dark Mode" class="w-7 h-7 text-gray-300" id="theme-icon"></img>
+                            <img src="./assets/img/MoonWhite.svg" alt="Dark Mode" class="w-8 h-8 text-gray-300" id="theme-icon"></img>
                         </button>
                     </div>
                 </div>
