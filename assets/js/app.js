@@ -37,25 +37,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function applyTheme(isDark) {
     const body = document.body;
-    const icon = $('#theme-icon'); // This selects the <img> tag
+    const icon = $('#theme-icon');
     
     if (isDark) {
         body.classList.add('dark-mode');
         if(icon) {
-            // Fix: Switch the image source instead of using Lucide
             icon.src = './assets/img/SunWhite.svg';
             icon.alt = 'Light Mode';
         }
     } else {
         body.classList.remove('dark-mode');
         if(icon) {
-            // Fix: Switch back to the Moon image
             icon.src = './assets/img/MoonWhite.svg';
             icon.alt = 'Dark Mode';
         }
     }
     
-    // You can keep this if you use icons elsewhere, but it's not needed for the toggle anymore
     if(window.lucide) window.lucide.createIcons();
 
 }

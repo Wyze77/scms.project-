@@ -23,6 +23,8 @@ function render() {
     .map((c) => {
       const isJoined = joinedIds.includes(c.id);
 
+      const displayMembers = isJoined ? c.members + 1 : c.members;
+
       const actionBtn = isJoined
         ? `<button onclick="window.handleJoin(${c.id})" class="btn bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 btn-sm flex-1">Leave Club</button>`
         : `<button onclick="window.handleJoin(${c.id})" class="btn btn-primary btn-sm flex-1">Join Club</button>`;
@@ -40,9 +42,11 @@ function render() {
         c.category
       }</span>
                     <div class="flex items-center gap-1 text-text-secondary text-sm">
-                        <img src="./assets/img/PersonBlack.svg" alt="Person" class="w-5 h-5"></img>
-                        ${c.members} members</span>
-                    </div>
+          <img src="./assets/img/PersonBlack.svg" alt="Person" class="w-5 h-5"></img>
+          
+          ${displayMembers} members</span>
+      </div>
+      
                 </div>
                 <p class="text-text-secondary text-sm">${c.description}</p>
                 <div class="flex gap-2 pt-2 mt-auto">
