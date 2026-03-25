@@ -19,8 +19,7 @@ function render() {
     const matchesSearch =
       item.title.toLowerCase().includes(searchVal) ||
       item.description.toLowerCase().includes(searchVal) ||
-      item.category.toLowerCase().includes(searchVal) ||
-      item.date.toLowerCase().includes(searchVal);
+      item.category.toLowerCase().includes(searchVal);
     const matchesCat =
       currentCategory === "All" || item.category === currentCategory;
     return matchesSearch && matchesCat;
