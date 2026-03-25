@@ -18,11 +18,22 @@ function render() {
   const filtered = allAnnouncements.filter((item) => {
     const matchesSearch =
       item.title.toLowerCase().includes(searchVal) ||
-      item.description.toLowerCase().includes(searchVal);
+      item.description.toLowerCase().includes(searchVal) ||
+      item.category.toLowerCase().includes(searchVal);
     const matchesCat =
       currentCategory === "All" || item.category === currentCategory;
     return matchesSearch && matchesCat;
   });
+
+  if (!filtered.length) {
+    container.innerHTML = `
+      <div class="card p-6 text-center">
+        <h3 class="text-text-primary poppins mb-2">No announcements found</h3>
+        <p class="text-text-secondary">Try a different search keyword or category.</p>
+      </div>
+    `;
+    return;
+  }
 
   container.innerHTML = filtered
     .map((item) => {
